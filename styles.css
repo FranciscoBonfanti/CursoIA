@@ -25,6 +25,92 @@
     display: none !important;
   }
   
+
+  .gradient-boton {
+    position: relative;
+    padding: 15px 40px;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    background: linear-gradient(to right,
+    #ffcc00,  
+    #ff7f00, 
+    #e60050,  
+    #3333cc
+  );
+    background-size: 300% 300%;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    z-index: 1;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: shine 5s ease infinite;
+  }
+
+  .gradient-boton::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.2) 10%, transparent 60%);
+    animation: pulse 2s infinite;
+    z-index: 0;
+  }
+
+  .gradient-boton::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    filter: blur(20px);
+    opacity: 0.4;
+    z-index: -1;
+    transition: opacity 0.3s;
+  }
+
+  .gradient-boton:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.5);
+  }
+
+  .gradient-boton:hover::after {
+    opacity: 0.7;
+  }
+
+  @keyframes shine {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+      opacity: 0.3;
+    }
+    50% {
+      transform: scale(1.5);
+      opacity: 0.1;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 0.3;
+    }
+  }
+
+
   /* Navegación */
   .navbar {
     position: sticky;
