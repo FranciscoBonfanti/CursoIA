@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Curso de IA</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="icon" href="./img/logo.png" type="image/png">
+  <meta name="description" content="Curso de Inteligencia Artificial para dominar tecnologías avanzadas.">
+  <meta name="keywords" content="Inteligencia Artificial, Curso, Tecnologías Avanzadas, Futurista">
+  <meta name="author" content="Secretaría de Gestión Pública, Provincia de Santa Fe">
+  <meta name="robots" content="index, follow">
+</head>
+<body>
+  <!-- Navegación -->
+  <nav class="navbar">
+    <div class="container">
+      <div class="logo gradient-text">
+        <img src="./img/Captura de pantalla 2025-04-21 112412.png" class="logo-foto" alt="logo-Santa Fe">
+      </div>
+      <div class="logo-foto"></div>
+      <div class="menu-toggle" id="mobile-menu">
+        <i class="fas fa-bars"></i>
+      </div>
+      <ul class="nav-menu">
+        <li><a href="#" class="nav-link">Inicio</a></li>
+        <li><a href="#materiales" class="nav-link">Materiales</a></li>
+        <li><a href="#clases" class="nav-link">Clases</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero">
+    <div class="grid-pattern"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1 class="gradient-text">Curso de Inteligencia Artificial</h1>
+      <p>Domina las tecnologías más avanzadas del futuro con nuestro curso especializado</p>
+      <button class="gradient-btn">Comenzar Ahora</button>
+    </div>
+    <div class="circle circle-1"></div>
+    <div class="circle circle-2"></div>
+  </header>
+
+  <main class="container">
+    <!-- Countdown Section -->
+    <section class="section">
+      <h2 class="section-title gradient-text">Próxima Clase</h2>
+      <div class="countdown" id="countdown">
+        <div class="countdown-item">
+          <div class="countdown-box">
+            <span id="days">00</span>
+          </div>
+          <span class="countdown-label">Días</span>
+        </div>
+        <div class="countdown-item">
+          <div class="countdown-box">
+            <span id="hours">00</span>
+          </div>
+          <span class="countdown-label">Horas</span>
+        </div>
+        <div class="countdown-item">
+          <div class="countdown-box">
+            <span id="minutes">00</span>
+          </div>
+          <span class="countdown-label">Minutos</span>
+        </div>
+        <div class="countdown-item">
+          <div class="countdown-box">
+            <span id="seconds">00</span>
+          </div>
+          <span class="countdown-label">Segundos</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Materiales Section -->
+    <section id="materiales" class="section futuristic-card">
+      <h2 class="section-title gradient-text">Material del Curso</h2>
+      
+      <div class="upload-section">
+        <h3>Subir Nuevo Material</h3>
+        <div class="upload-controls">
+          <label for="file-upload" class="file-label">
+            <i class="fas fa-upload"></i>
+            <span id="file-name">Seleccionar Archivo</span>
+          </label>
+          <input type="file" id="file-upload" class="hidden">
+          <button id="upload-btn" class="gradient-btn" disabled>
+            <i class="fas fa-upload"></i> Subir Material
+          </button>
+        </div>
+      </div>
+      
+      <div class="materials-grid" id="materials-container">
+        <!-- Los materiales se cargarán dinámicamente aquí -->
+      </div>
+    </section>
+
+    <!-- Clases Section -->
+    <section id="clases" class="section futuristic-card">
+      <h2 class="section-title gradient-text">Clases grabadas</h2>
+      
+      <div class="add-link-section">
+        <button id="toggle-add-link" class="gradient-btn">
+          <i class="fas fa-plus"></i> Agregar Enlace
+        </button>
+      </div>
+      
+      <div id="add-link-form" class="add-link-form hidden">
+        <h3>Agregar Nuevo Enlace</h3>
+        <div class="form-grid">
+          <input type="text" id="link-title" placeholder="Título de la clase" class="form-input">
+          <input type="date" id="link-date" class="form-input">
+          <select id="link-type" class="form-input">
+            <option value="recorded">Grabada</option>
+            <option value="live">En vivo</option>
+          </select>
+          <input type="url" id="link-url" placeholder="URL de la clase" class="form-input">
+        </div>
+        <button id="save-link" class="gradient-btn">Guardar Enlace</button>
+      </div>
+      
+      <div class="links-grid" id="links-container">
+        <!-- Los enlaces se cargarán dinámicamente aquí -->
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-info">
+          <h3 class="gradient-text">Curso IA</h3>
+        </div>
+        <div class="footer-links">
+          <a href="#" class="nav-link">Inicio</a>
+          <a href="#materiales" class="nav-link">Materiales</a>
+          <a href="#clases" class="nav-link">Clases</a>
+          <a href="#" class="nav-link">Contacto</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; <span id="current-year"></span> Esta plataforma fue desarrollada con fines formativos por la Secretaría de Gestión Pública para el Curso sobre Uso de Inteligencia Artificial. No es un sitio oficial de la Provincia de Santa Fe.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Menú móvil
+    document.getElementById('mobile-menu').addEventListener('click', function() {
+      document.querySelector('.nav-menu').classList.toggle('active');
+      this.querySelector('i').classList.toggle('fa-bars');
+      this.querySelector('i').classList.toggle('fa-times');
+    });
+
+    // Fecha actual para el footer
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+
+    // Countdown Timer
+    function updateCountdown() {
+      const nextClassDate = new Date("2025-05-15T18:00:00").getTime();
+      const now = new Date().getTime();
+      const difference = nextClassDate - now;
+      
+      if (difference <= 0) {
+        document.getElementById('days').textContent = "00";
+        document.getElementById('hours').textContent = "00";
+        document.getElementById('minutes').textContent = "00";
+        document.getElementById('seconds').textContent = "00";
+        return;
+      }
+      
+      const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+      
+      document.getElementById('days').textContent = days.toString().padStart(2, "0");
+      document.getElementById('hours').textContent = hours.toString().padStart(2, "0");
+      document.getElementById('minutes').textContent = minutes.toString().padStart(2, "0");
+      document.getElementById('seconds').textContent = seconds.toString().padStart(2, "0");
+    }
+    
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+
+    // Materiales del curso
+    let materials = [
+      {
+        id: "1",
+        name: "Introducción a la IA",
+        type: "PDF",
+        date: "01/04/2025",
+        downloadUrl: "#"
+      },
+      {
+        id: "2",
+        name: "Redes Neuronales",
+        type: "PDF",
+        date: "08/04/2025",
+        downloadUrl: "#"
+      },
+      {
+        id: "2",
+        name: "Redes Neuronales",
+        type: "PDF",
+        date: "08/04/2025",
+        downloadUrl: "#"
+      },
+      {
+        id: "3",
+        name: "Ejercicios Prácticos",
+        type: "ZIP",
+        date: "15/04/2025",
+        downloadUrl: "#"
+      }
+    ];
+
+    function renderMaterials() {
+      const container = document.getElementById('materials-container');
+      container.innerHTML = '';
+      
+      materials.forEach(material => {
+        const materialCard = document.createElement('div');
+        materialCard.className = 'material-card';
+        materialCard.innerHTML = `
+          <div class="material-icon">
+            <i class="fas fa-file-alt"></i>
+          </div>
+          <div class="material-info">
+            <h3>${material.name}</h3>
+            <p>${material.type} • ${material.date}</p>
+          </div>
+          <a href="${material.downloadUrl}" class="download-link">
+            <i class="fas fa-download"></i> Descargar
+          </a>
+        `;
+        container.appendChild(materialCard);
+      });
+    }
+
+    // Manejo de subida de archivos
+    document.getElementById('file-upload').addEventListener('change', function(e) {
+      const fileName = e.target.files[0] ? e.target.files[0].name : 'Seleccionar Archivo';
+      document.getElementById('file-name').textContent = fileName;
+      document.getElementById('upload-btn').disabled = !e.target.files[0];
+    });
+
+    document.getElementById('upload-btn').addEventListener('click', function() {
+      const fileInput = document.getElementById('file-upload');
+      if (fileInput.files.length > 0) {
+        const file = fileInput.files[0];
+        const fileType = file.name.split('.').pop().toUpperCase();
+        
+        // Simulación de subida (en una app real, aquí iría la lógica de subida al servidor)
+        const newMaterial = {
+          id: Date.now().toString(),
+          name: file.name,
+          type: fileType,
+          date: new Date().toLocaleDateString(),
+          downloadUrl: "#"
+        };
+        
+        materials.push(newMaterial);
+        renderMaterials();
+        
+        // Reset file input
+        fileInput.value = '';
+        document.getElementById('file-name').textContent = 'Seleccionar Archivo';
+        document.getElementById('upload-btn').disabled = true;
+      }
+    });
+
+    // Enlaces a clases
+    let links = [
+      {
+        id: "1",
+        title: "Introducción a la IA",
+        date: "01/04/2025",
+        type: "recorded",
+        url: "https://example.com/class1"
+      },
+      {
+        id: "2",
+        title: "Redes Neuronales",
+        date: "08/04/2025",
+        type: "recorded",
+        url: "https://example.com/class2"
+      },
+      
+      {
+        id: "3",
+        title: "Aprendizaje Profundo",
+        date: "15/04/2025",
+        type: "live",
+        url: "https://example.com/class3"
+      }
+    ];
+
+    function renderLinks() {
+      const container = document.getElementById('links-container');
+      container.innerHTML = '';
+      
+      links.forEach(link => {
+        const linkCard = document.createElement('div');
+        linkCard.className = 'link-card';
+        linkCard.innerHTML = `
+          <div class="link-icon">
+            <i class="fas ${link.type === 'live' ? 'fa-calendar' : 'fa-video'}"></i>
+          </div>
+          <div class="link-info">
+            <h3>${link.title}</h3>
+            <p>${link.date} • ${link.type === 'live' ? 'En vivo' : 'Grabada'}</p>
+          </div>
+          <a href="${link.url}" target="_blank" class="link-url">
+            <i class="fas fa-external-link-alt"></i> ${link.type === 'live' ? 'Unirse a la clase' : 'Ver grabación'}
+          </a>
+        `;
+        container.appendChild(linkCard);
+      });
+    }
+
+    // Toggle formulario de agregar enlace
+    document.getElementById('toggle-add-link').addEventListener('click', function() {
+      const form = document.getElementById('add-link-form');
+      form.classList.toggle('hidden');
+      
+      const icon = this.querySelector('i');
+      if (form.classList.contains('hidden')) {
+        icon.classList.remove('fa-times');
+        icon.classList.add('fa-plus');
+        this.textContent = ' Agregar Enlace';
+        this.prepend(icon);
+      } else {
+        icon.classList.remove('fa-plus');
+        icon.classList.add('fa-times');
+        this.textContent = ' Cancelar';
+        this.prepend(icon);
+      }
+    });
+
+    // Guardar nuevo enlace
+    document.getElementById('save-link').addEventListener('click', function() {
+      const title = document.getElementById('link-title').value;
+      const date = document.getElementById('link-date').value;
+      const type = document.getElementById('link-type').value;
+      const url = document.getElementById('link-url').value;
+      
+      if (title && date && url) {
+        const newLink = {
+          id: Date.now().toString(),
+          title,
+          date: new Date(date).toLocaleDateString(),
+          type,
+          url
+        };
+        
+        links.push(newLink);
+        renderLinks();
+        
+        // Reset form
+        document.getElementById('link-title').value = '';
+        document.getElementById('link-date').value = '';
+        document.getElementById('link-url').value = '';
+        document.getElementById('add-link-form').classList.add('hidden');
+        
+        const toggleBtn = document.getElementById('toggle-add-link');
+        const icon = toggleBtn.querySelector('i');
+        icon.classList.remove('fa-times');
+        icon.classList.add('fa-plus');
+        toggleBtn.textContent = ' Agregar Enlace';
+        toggleBtn.prepend(icon);
+      }
+    });
+
+    // Inicializar la página
+    renderMaterials();
+    renderLinks();
+  </script>
+</body>
+</html>
