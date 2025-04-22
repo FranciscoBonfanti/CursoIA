@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,12 +13,13 @@
   <meta name="author" content="Secretaría de Gestión Pública, Provincia de Santa Fe">
   <meta name="robots" content="index, follow">
 </head>
+
 <body>
   <!-- Navegación -->
   <nav class="navbar">
     <div class="container">
       <div class="logo gradient-text">
-        <img src="./img/Captura de pantalla 2025-04-21 112412.png" class="logo-foto" alt="logo-Santa Fe">
+        <a href="#" class="nav-link">Curso IAGen</a>
       </div>
       <div class="logo-foto"></div>
       <div class="menu-toggle" id="mobile-menu">
@@ -43,7 +45,7 @@
     <div class="circle circle-1"></div>
     <div class="circle circle-2"></div>
   </header>
-  
+
 
   <main class="container">
     <!-- Countdown Section -->
@@ -80,7 +82,7 @@
     <!-- Materiales Section -->
     <section id="materiales" class="section futuristic-card">
       <h2 class="section-title gradient-text">Material del Curso</h2>
-      
+
       <div class="upload-section">
         <h3>Subir Nuevo Material</h3>
         <div class="upload-controls">
@@ -89,12 +91,15 @@
             <span id="file-name">Seleccionar Archivo</span>
           </label>
           <input type="file" id="file-upload" class="hidden">
+          <div class="password-input">
+            <input type="password" id="upload-password" placeholder="Contraseña para subir" class="form-input">
+          </div>
           <button id="upload-btn" class="gradient-btn" disabled>
             <i class="fas fa-upload"></i> Subir Material
           </button>
         </div>
       </div>
-      
+
       <div class="materials-grid" id="materials-container">
         <!-- Los materiales se cargarán dinámicamente aquí -->
       </div>
@@ -103,13 +108,13 @@
     <!-- Clases Section -->
     <section id="clases" class="section futuristic-card">
       <h2 class="section-title gradient-text">Clases grabadas</h2>
-      
+
       <div class="add-link-section">
         <button id="toggle-add-link" class="gradient-btn">
           <i class="fas fa-plus"></i> Agregar Enlace
         </button>
       </div>
-      
+
       <div id="add-link-form" class="add-link-form hidden">
         <h3>Agregar Nuevo Enlace</h3>
         <div class="form-grid">
@@ -120,10 +125,11 @@
             <option value="live">En vivo</option>
           </select>
           <input type="url" id="link-url" placeholder="URL de la clase" class="form-input">
+          <input type="password" id="link-password" placeholder="Contraseña para agregar" class="form-input">
         </div>
         <button id="save-link" class="gradient-btn">Guardar Enlace</button>
       </div>
-      
+
       <div class="links-grid" id="links-container">
         <!-- Los enlaces se cargarán dinámicamente aquí -->
       </div>
@@ -145,14 +151,16 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; <span id="current-year"></span> Esta plataforma fue desarrollada con fines formativos por la Secretaría de Gestión Pública para el Curso sobre Uso de Inteligencia Artificial. No es un sitio oficial de la Provincia de Santa Fe.</p>
+        <p>&copy; <span id="current-year"></span> Esta plataforma fue desarrollada con fines formativos por la
+          Secretaría de Gestión Pública para el Curso sobre Uso de Inteligencia Artificial. No es un sitio oficial de la
+          Provincia de Santa Fe.</p>
       </div>
     </div>
   </footer>
 
   <script>
     // Menú móvil
-    document.getElementById('mobile-menu').addEventListener('click', function() {
+    document.getElementById('mobile-menu').addEventListener('click', function () {
       document.querySelector('.nav-menu').classList.toggle('active');
       this.querySelector('i').classList.toggle('fa-bars');
       this.querySelector('i').classList.toggle('fa-times');
@@ -166,7 +174,7 @@
       const nextClassDate = new Date("2025-05-06T18:00:00").getTime();
       const now = new Date().getTime();
       const difference = nextClassDate - now;
-      
+
       if (difference <= 0) {
         document.getElementById('days').textContent = "00";
         document.getElementById('hours').textContent = "00";
@@ -174,18 +182,18 @@
         document.getElementById('seconds').textContent = "00";
         return;
       }
-      
+
       const days = Math.floor(difference / (1000 * 60 * 60 * 24));
       const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
       const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
       const seconds = Math.floor((difference % (1000 * 60)) / 1000);
-      
+
       document.getElementById('days').textContent = days.toString().padStart(2, "0");
       document.getElementById('hours').textContent = hours.toString().padStart(2, "0");
       document.getElementById('minutes').textContent = minutes.toString().padStart(2, "0");
       document.getElementById('seconds').textContent = seconds.toString().padStart(2, "0");
     }
-    
+
     setInterval(updateCountdown, 1000);
     updateCountdown();
 
@@ -221,10 +229,13 @@
       }
     ];
 
+    // Contraseña para subir archivos
+    const UPLOAD_PASSWORD = "curso2025"; // Puedes cambiar esta contraseña
+
     function renderMaterials() {
       const container = document.getElementById('materials-container');
       container.innerHTML = '';
-      
+
       materials.forEach(material => {
         const materialCard = document.createElement('div');
         materialCard.className = 'material-card';
@@ -245,17 +256,33 @@
     }
 
     // Manejo de subida de archivos
-    document.getElementById('file-upload').addEventListener('change', function(e) {
+    document.getElementById('file-upload').addEventListener('change', function (e) {
       const fileName = e.target.files[0] ? e.target.files[0].name : 'Seleccionar Archivo';
       document.getElementById('file-name').textContent = fileName;
       document.getElementById('upload-btn').disabled = !e.target.files[0];
     });
 
-    document.getElementById('upload-btn').addEventListener('click', function() {
+    document.getElementById('upload-btn').addEventListener('click', function () {
       const fileInput = document.getElementById('file-upload');
-      if (fileInput.files.length > 0) {
-        const file = fileInput.files[0];
-        const fileType = file.name.split('.').pop().toUpperCase();
+      const passwordInput = document.getElementById('upload-password');
+      
+      if (fileInput.files.length === 0) {
+        alert('Por favor selecciona un archivo para subir.');
+        return;
+      }
+      
+      if (passwordInput.value !== UPLOAD_PASSWORD) {
+        alert('Contraseña incorrecta. No se puede subir el archivo.');
+        return;
+      }
+      
+      const file = fileInput.files[0];
+      const fileType = file.name.split('.').pop().toUpperCase();
+      
+      // Leer el archivo como base64 para guardarlo en el JS
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        const fileData = e.target.result;
         
         // Simulación de subida (en una app real, aquí iría la lógica de subida al servidor)
         const newMaterial = {
@@ -263,17 +290,23 @@
           name: file.name,
           type: fileType,
           date: new Date().toLocaleDateString(),
-          downloadUrl: "#"
+          downloadUrl: "#",
+          data: fileData // Guardar los datos del archivo en el objeto
         };
-        
+
         materials.push(newMaterial);
         renderMaterials();
-        
-        // Reset file input
+
+        // Reset form
         fileInput.value = '';
+        passwordInput.value = '';
         document.getElementById('file-name').textContent = 'Seleccionar Archivo';
         document.getElementById('upload-btn').disabled = true;
-      }
+        
+        alert('Archivo subido correctamente.');
+      };
+      
+      reader.readAsDataURL(file);
     });
 
     // Enlaces a clases
@@ -292,7 +325,7 @@
         type: "recorded",
         url: "https://example.com/class2"
       },
-      
+
       {
         id: "3",
         title: "Aprendizaje Profundo",
@@ -302,10 +335,14 @@
       }
     ];
 
+
+    const UPLOAD_PASSWORDD = "curso2025"; // Puedes cambiar esta contraseña
+
+
     function renderLinks() {
       const container = document.getElementById('links-container');
       container.innerHTML = '';
-      
+
       links.forEach(link => {
         const linkCard = document.createElement('div');
         linkCard.className = 'link-card';
@@ -326,10 +363,12 @@
     }
 
     // Toggle formulario de agregar enlace
-    document.getElementById('toggle-add-link').addEventListener('click', function() {
+    document.getElementById('toggle-add-link').addEventListener('click', function () {
       const form = document.getElementById('add-link-form');
+      const passwordInput = document.getElementById('upload-passwordd');
+
       form.classList.toggle('hidden');
-      
+
       const icon = this.querySelector('i');
       if (form.classList.contains('hidden')) {
         icon.classList.remove('fa-times');
@@ -345,44 +384,54 @@
     });
 
     // Guardar nuevo enlace
-    document.getElementById('save-link').addEventListener('click', function() {
+    document.getElementById('save-link').addEventListener('click', function () {
       const title = document.getElementById('link-title').value;
       const date = document.getElementById('link-date').value;
       const type = document.getElementById('link-type').value;
       const url = document.getElementById('link-url').value;
-      
-      if (title && date && url) {
-        const newLink = {
-          id: Date.now().toString(),
-          title,
-          date: new Date(date).toLocaleDateString(),
-          type,
-          url
-        };
-        
-        links.push(newLink);
-        renderLinks();
-        
-        // Reset form
-        document.getElementById('link-title').value = '';
-        document.getElementById('link-date').value = '';
-        document.getElementById('link-url').value = '';
-        document.getElementById('add-link-form').classList.add('hidden');
-        
-        const toggleBtn = document.getElementById('toggle-add-link');
-        const icon = toggleBtn.querySelector('i');
-        icon.classList.remove('fa-times');
-        icon.classList.add('fa-plus');
-        toggleBtn.textContent = ' Agregar Enlace';
-        toggleBtn.prepend(icon);
+      const password = document.getElementById('link-password').value;
+
+      if (!title || !date || !url) {
+        alert('Por favor completa todos los campos.');
+        return;
       }
+
+      if (password !== UPLOAD_PASSWORD) {
+        alert('Contraseña incorrecta. No se puede agregar el enlace.');
+        return;
+      }
+
+      const newLink = {
+        id: Date.now().toString(),
+        title,
+        date: new Date(date).toLocaleDateString(),
+        type,
+        url
+      };
+
+      links.push(newLink);
+      renderLinks();
+
+      // Reset form
+      document.getElementById('link-title').value = '';
+      document.getElementById('link-date').value = '';
+      document.getElementById('link-url').value = '';
+      document.getElementById('link-password').value = '';
+      document.getElementById('add-link-form').classList.add('hidden');
+
+      const toggleBtn = document.getElementById('toggle-add-link');
+      const icon = toggleBtn.querySelector('i');
+      icon.classList.remove('fa-times');
+      icon.classList.add('fa-plus');
+      toggleBtn.textContent = ' Agregar Enlace';
+      toggleBtn.prepend(icon);
+      
+      alert('Enlace agregado correctamente.');
     });
 
     // Inicializar la página
     renderMaterials();
     renderLinks();
-
-
   </script>
 </body>
 </html>
