@@ -40,36 +40,43 @@
   let materials = [
     {
       id: "1",
-      name: "Introducción a la IA",
+      name: "Chat GPT vs GPT-4",
       type: "PDF",
-      date: "01/04/2025",
-      downloadUrl: "#"
+      date: "05/05/2025",
+      downloadUrl: "/PDF/Libro-ChatGPT-vs-GPT-4.-UBA-Thomson-Reuters-La-Ley.pdf"
     },
     {
       id: "2",
-      name: "Redes Neuronales",
+      name: "Regulaciones de inteligencia artificial",
       type: "PDF",
-      date: "08/04/2025",
-      downloadUrl: "#"
-    },
-    {
-      id: "2",
-      name: "Redes Neuronales",
-      type: "PDF",
-      date: "08/04/2025",
-      downloadUrl: "#"
+      date: "05/05/2025",
+      downloadUrl: "/PDF/Cuadro-comparativo-de-regulaciones-2-1.pdf"
     },
     {
       id: "3",
-      name: "Ejercicios Prácticos",
-      type: "ZIP",
-      date: "15/04/2025",
-      downloadUrl: "#"
+      name: "¿Qué es la Inteligencia Artificial?",
+      type: "Web",
+      date: "05/05/2025",
+      downloadUrl: "https://www.argentina.gob.ar/justicia/convosenlaweb/situaciones/que-es-la-inteligencia-artificial"
+    },
+    {
+      id: "4",
+      name: "La evolución de la productividad",
+      type: "PDF",
+      date: "05/05/2025",
+      downloadUrl: "/PDF/Resumen-Ejecutivo.pdf"
+    },
+    {
+      id: "5",
+      name: "Recomendación sobre la ética de la inteligencia artificial",
+      type: "Web",
+      date: "05/05/2025",
+      downloadUrl: "https://unesdoc.unesco.org/ark:/48223/pf0000381137_spa"
     }
   ];
 
   // Contraseña para subir archivos
-  const UPLOAD_PASSWORD = "curso2025"; // Puedes cambiar esta contraseña
+  const UPLOAD_PASSWORD = "curso2025";
 
   function renderMaterials() {
     const container = document.getElementById('materials-container');
@@ -123,14 +130,13 @@
     reader.onload = function(e) {
       const fileData = e.target.result;
       
-      // Simulación de subida (en una app real, aquí iría la lógica de subida al servidor)
       const newMaterial = {
         id: Date.now().toString(),
         name: file.name,
         type: fileType,
         date: new Date().toLocaleDateString(),
         downloadUrl: "#",
-        data: fileData // Guardar los datos del archivo en el objeto
+        data: fileData 
       };
 
       materials.push(newMaterial);
@@ -153,29 +159,14 @@
     {
       id: "1",
       title: "Introducción a la IA",
-      date: "01/04/2025",
+      date: "Proxima clase: 06/05/2025",
       type: "recorded",
       url: "https://example.com/class1"
-    },
-    {
-      id: "2",
-      title: "Redes Neuronales",
-      date: "08/04/2025",
-      type: "recorded",
-      url: "https://example.com/class2"
-    },
-
-    {
-      id: "3",
-      title: "Aprendizaje Profundo",
-      date: "15/04/2025",
-      type: "live",
-      url: "https://example.com/class3"
     }
   ];
 
 
-  const UPLOAD_PASSWORDD = "curso2025"; // Puedes cambiar esta contraseña
+  const UPLOAD_PASSWORDD = "curso2025";
 
 
   function renderLinks() {
@@ -268,6 +259,5 @@
     alert('Enlace agregado correctamente.');
   });
 
-  // Inicializar la página
   renderMaterials();
   renderLinks();
