@@ -10,7 +10,7 @@
 
   // Countdown Timer
   function updateCountdown() {
-    const nextClassDate = new Date("2025-05-06T18:00:00").getTime();
+    const nextClassDate = new Date("2025-05-06T12:00:00").getTime();
     const now = new Date().getTime();
     const difference = nextClassDate - now;
 
