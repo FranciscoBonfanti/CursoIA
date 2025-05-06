@@ -161,7 +161,7 @@
       title: "Introducción a la IA",
       date: "Proxima clase: 06/05/2025",
       type: "recorded",
-      url: "https://example.com/class1"
+      url: "https://meet.google.com/ycm-kmoc-nci"
     }
   ];
 
