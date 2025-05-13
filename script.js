@@ -10,7 +10,7 @@
 
   // Countdown Timer
   function updateCountdown() {
-    const nextClassDate = new Date("2025-05-06T12:00:00").getTime();
+    const nextClassDate = new Date("2025-05-13T12:00:00").getTime();
     const now = new Date().getTime();
     const difference = nextClassDate - now;
 
@@ -160,6 +160,13 @@
       id: "1",
       title: "Introducción a la IA",
       date: "Proxima clase: 06/05/2025",
+      type: "recorded",
+      url: "https://meet.google.com/ycm-kmoc-nci"
+    },
+    {
+      id: "2",
+      title: "Clase 2: IA en la práctica",
+      date: "Proxima clase: 13/05/2025",
       type: "recorded",
       url: "https://meet.google.com/ycm-kmoc-nci"
     }
