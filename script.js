@@ -45,6 +45,13 @@
       date: "05/05/2025",
       downloadUrl: "/PDF/Libro-ChatGPT-vs-GPT-4.-UBA-Thomson-Reuters-La-Ley.pdf"
     },
+        {
+      id: "6",
+      name: "Clase 2",
+      type: "PDF",
+      date: "05/05/2025",
+      downloadUrl: "/PDF/ElArteDeAplicarLaIA-Clase2.pdf"
+    },
     {
       id: "2",
       name: "Regulaciones de inteligencia artificial",
@@ -159,14 +166,28 @@
     {
       id: "1",
       title: "Introducción a la IA",
-      date: "Proxima clase: 06/05/2025",
+      date: "06/05/2025",
       type: "recorded",
-      url: "https://meet.google.com/ycm-kmoc-nci"
+      url: ""
     },
     {
       id: "2",
       title: "Clase 2: IA en la práctica",
-      date: "Proxima clase: 13/05/2025",
+      date: "13/05/2025",
+      type: "recorded",
+      url: "https://sf.gob.ar/ArteIAII"
+    },
+        {
+      id: "3",
+      title: "Clase 3: IA en la práctica",
+      date: "20/05/2025",
+      type: "recorded",
+      url: "https://meet.google.com/ycm-kmoc-nci"
+    },
+        {
+      id: "4",
+      title: "Última clase",
+      date: "27/05/2025",
       type: "recorded",
       url: "https://meet.google.com/ycm-kmoc-nci"
     }
