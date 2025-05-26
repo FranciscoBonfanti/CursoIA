@@ -168,7 +168,7 @@
       title: "Introducción a la IA",
       date: "06/05/2025",
       type: "recorded",
-      url: ""
+      url: "https://www.youtube.com/watch?v=zvtn8rKp_eY&list=PLJKcMr5XTsScvH9UY1SBvKfA_GNErzovd&index=2"
     },
     {
       id: "2",
@@ -182,7 +182,7 @@
       title: "Clase 3: IA en la práctica",
       date: "20/05/2025",
       type: "recorded",
-      url: "https://meet.google.com/ycm-kmoc-nci"
+      url: "https://www.youtube.com/watch?v=zrWHeEpU6JI&list=PLJKcMr5XTsScvH9UY1SBvKfA_GNErzovd&index=3"
     },
         {
       id: "4",
