@@ -168,28 +168,28 @@
       title: "Introducción a la IA",
       date: "06/05/2025",
       type: "recorded",
-      url: "https://www.youtube.com/watch?v=zvtn8rKp_eY&list=PLJKcMr5XTsScvH9UY1SBvKfA_GNErzovd&index=2"
+      url: "https://www.youtube.com/watch?v=zvtn8rKp_eY&list=PLJKcMr5XTsScvH9UY1SBvKfA_GNErzovd&index=3"
     },
     {
       id: "2",
       title: "Clase 2: IA en la práctica",
       date: "13/05/2025",
       type: "recorded",
-      url: "https://sf.gob.ar/ArteIAII"
+      url: "https://www.youtube.com/watch?v=X5Myq3yoOg8&list=PLJKcMr5XTsScvH9UY1SBvKfA_GNErzovd&index=2"
     },
         {
       id: "3",
       title: "Clase 3: IA en la práctica",
       date: "20/05/2025",
       type: "recorded",
-      url: "https://www.youtube.com/watch?v=zrWHeEpU6JI&list=PLJKcMr5XTsScvH9UY1SBvKfA_GNErzovd&index=3"
+      url: "https://www.youtube.com/watch?v=zrWHeEpU6JI&list=PLJKcMr5XTsScvH9UY1SBvKfA_GNErzovd&index=1"
     },
         {
       id: "4",
       title: "Última clase",
       date: "27/05/2025",
       type: "recorded",
-      url: "https://meet.google.com/ycm-kmoc-nci"
+      url: "https://www.youtube.com/live/t8W8NyLHlu8"
     }
   ];
 
