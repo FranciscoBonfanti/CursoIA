@@ -79,6 +79,69 @@
       type: "Web",
       date: "05/05/2025",
       downloadUrl: "https://unesdoc.unesco.org/ark:/48223/pf0000381137_spa"
+    },
+    {
+      id: "6",
+      name: "Catalogo de Prompts",
+      type: "PDF",
+      date: "03/06/2025",
+      downloadUrl: "/PDF2/Catalogo de Prompts (1).pdf"
+    },
+    {
+      id: "7",
+      name: "Guia de Introducción a Notebooklm",
+      type: "PDF",
+      date: "03/06/2025",
+      downloadUrl: "/PDF2/Guia de Introducción a Notebooklm.pdf"
+    },
+    {
+      id: "8",
+      name: "GUIA DE PROMPTS",
+      type: "PDF",
+      date: "03/06/2025",
+      downloadUrl: "/PDF2/GUIA DE PROMPTS (3).pdf"
+    },
+    {
+      id: "9",
+      name: "Guia practica de aplicacion de la IA",
+      type: "PDF",
+      date: "03/06/2025",
+      downloadUrl: "/PDF2/guia-practica-de-aplicacion-de-la-ia (1).pdf"
+    },
+    {
+      id: "10",
+      name: "Guía IAGen Funcionarios",
+      type: "PDF",
+      date: "03/06/2025",
+      downloadUrl: "/PDF2/Guía IAG Funcionarios (1).pdf"
+    },
+    {
+      id: "11",
+      name: "IAGen y Administracion Pública",
+      type: "PDF",
+      date: "03/06/2025",
+      downloadUrl: "/PDF2/IAG-y-administracion-publica (3).pdf"
+    },
+    {
+      id: "12",
+      name: "LISTADO PARA CAPACITACIÓN PROMPTS",
+      type: "PDF",
+      date: "03/06/2025",
+      downloadUrl: "/PDF2/LISTADO PARA CAPACITACIÓN PROMPTS (1).pdf"
+    },
+    {
+      id: "13",
+      name: "Principios del prompting",
+      type: "PDF",
+      date: "03/06/2025",
+      downloadUrl: "/PDF2/Principios del prompting.pdf"
+    },
+    {
+      id: "14",
+      name: "Recomendaciones para el uso de IA",
+      type: "PDF",
+      date: "03/06/2025",
+      downloadUrl: "/PDF2/Recomendaciones para el uso de IA.pdf"
     }
   ];
 
